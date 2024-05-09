@@ -124,7 +124,7 @@ class OneDMovement extends Phaser.Scene {
 
     createUFO(){
         this.ufo = this.add.sprite(400,100,"enemyone_ufo");
-        this.ufo.setScale(0.5);
+        this.ufo.setScale(0.7);
         this.ufo.health = 20;
         this.ufo.initalX = this.ufo.x;
         this.ufo.direction = 1;
@@ -255,11 +255,11 @@ class OneDMovement extends Phaser.Scene {
               this.ufo.direction *= -1;
             }
         
-            this.ufo.y += 0.05;
+            this.ufo.y += 1;
         
             this.ufo.spawnTimer += this.sys.game.loop.delta;
         
-            if (this.ufo.spawnTimer >= 3000 && this.ufo.active) {
+            if (this.ufo.spawnTimer >= 2000 && this.ufo.active) {
               const enemy = this.add.sprite(this.ufo.x, this.ufo.y, "enemyone");
               enemy.setScale(0.3);
               enemy.health = this.alienHealth["enemyone"];
